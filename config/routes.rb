@@ -1,4 +1,10 @@
 FaceMatch::Application.routes.draw do
+  get "quiz/home"
+
+  get "quiz/index"
+
+  resources :profiles
+
   devise_for :users
 
   # The priority is based upon order of creation:

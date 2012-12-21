@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,6 +10,11 @@ gem 'sqlite3'
 gem 'devise'
 
 gem 'json'
+
+gem 'libv8', '~> 3.11.8'
+
+gem 'rmagick'
+gem 'carrierwave'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +26,12 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+   
+  gem "therubyracer"
+  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  gem "twitter-bootstrap-rails"
+
+  
 end
 
 gem 'jquery-rails'

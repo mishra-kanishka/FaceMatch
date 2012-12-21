@@ -1,0 +1,5 @@
+module ProfilesHelper
+def label obj
+ obj.name
+end
+
