@@ -1,10 +1,44 @@
 
 <p><h1>Welcome to Face Quiz</h1></p>
 
+
+
+
 <% val = pick_image_obj_random %>
 
 <%= image_tag image(val) %>
 <%= label_tag labele(val) %>
+
+
+	
+    
+
+
+<p>Who is this person..??</p>
+
+<% form_tag {:controller =>'Quiz', :action => 'home', :method=>'post'} do %>
+
+<% correct = val.name %>
+<% list =pick_image_obj(val) %>
+
+<br>
+
+<%= radio_button_tag(:name, "#{list[0]}") %>
+<%= label_tag(:name_op1, "#{list[0]}") %>
+<%= radio_button_tag(:name, "#{list[1]}") %>
+<%= label_tag(:name_op2, "#{list[1]}") %>
+<%= radio_button_tag(:name, "#{list[2]}") %>
+<%= label_tag(:name_op3, "#{list[2]}") %>
+<%= radio_button_tag(:name, "#{list[3]}") %>
+<%= label_tag(:name_op4, "#{list[3]}") %>
+
+<%= button_tag "next"%>
+
+<br><%= submit_tag "submit" %><br>
+
+<% end %>
+
+
 
 
 
