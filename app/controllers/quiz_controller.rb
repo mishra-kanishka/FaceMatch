@@ -1,6 +1,9 @@
 class QuizController < ApplicationController
   def home
-  	@answer= params(:name)
+  	def calculate
+  		@answer= params[:name]
+
+  	end
   
   end
 
