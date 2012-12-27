@@ -25,25 +25,24 @@
 
 
 
-<%= form_tag controller_path,:action =>'calculate', method: :get do %>
-<% hidden_field_tag :correct_opt, "#{correct_opt}" %><br>
+<%= form_tag(:controller => "quiz", :action => "calculate", :method => "post") do %>
+<%= hidden_field_tag :correct_opt, "#{correct_opt}" %><br>
 
-<%= radio_button_tag(:name, "#{list[0]}") %>
+<%= radio_button_tag(:name, "1") %>
 <%= label_tag(:name_op1, "#{list[0]}") %>
-<%= radio_button_tag(:name, "#{list[1]}") %>
+<%= radio_button_tag(:name, "2") %>
 <%= label_tag(:name_op2, "#{list[1]}") %>
-<%= radio_button_tag(:name, "#{list[2]}") %>
+<%= radio_button_tag(:name, "3") %>
 <%= label_tag(:name_op3, "#{list[2]}") %>
-<%= radio_button_tag(:name, "#{list[3]}") %>
+<%= radio_button_tag(:name, "4") %>
 <%= label_tag(:name_op4, "#{list[3]}") %>
 
- <%= submit_tag "calculate", name: nil %>
-
-<%= submit_tag "submit" %><br>
+<%= submit_tag "Next" %>
 
 
+<%end%>
 
-<% end %>
+current score is...<%= @score %>
 
 
 

@@ -9,7 +9,8 @@ FaceMatch::Application.routes.draw do
 
 
 
-  match 'calculate' => "quiz#calculate", :via => :get
+  match 'calculate' => "quiz#calculate", :via => :post
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
