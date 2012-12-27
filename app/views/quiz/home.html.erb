@@ -11,17 +11,22 @@
 
 
 	
-    
+   <% correct = val.name %> 
+   <% list =pick_image_obj(val) %>
+   <% if correct == list[0] %>
+   	<% correct_opt=1%>
+   <%elsif correct == list[1]%>
+   	<% correct_opt=2%>
+   <%elsif correct == list[2]%>
+   	<% correct_opt=3%>
+   <%else correct == list[3]%>
+   	<%correct_opt=4%>
+   	<% end %>
 
 
-<p>Who is this person..??</p>
 
-
-
-<% correct = val.name %>
-<% list =pick_image_obj(val) %>
-
-<br>
+<%= form_tag controller_path,:action =>'calculate', method: :get do %>
+<% hidden_field_tag :correct_opt, "#{correct_opt}" %><br>
 
 <%= radio_button_tag(:name, "#{list[0]}") %>
 <%= label_tag(:name_op1, "#{list[0]}") %>
@@ -32,9 +37,13 @@
 <%= radio_button_tag(:name, "#{list[3]}") %>
 <%= label_tag(:name_op4, "#{list[3]}") %>
 
-<%= button_tag "next"%>
+ <%= submit_tag "calculate", name: nil %>
 
-<br><%= submit_tag "submit" %><br>
+<%= submit_tag "submit" %><br>
+
+
+
+<% end %>
 
 
 

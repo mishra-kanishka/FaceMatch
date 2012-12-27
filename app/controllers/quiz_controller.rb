@@ -1,12 +1,22 @@
 class QuizController < ApplicationController
-  def home
-  	def calculate
-  		@answer= params[:name]
-
-  	end
   
-  end
+  	def calculate
+  		score=0
+  		correct_ans= params[:correct_opt]
+  		radio_ans= params[:name]
 
-  def index
-  end
+  		respond_to do |format|
+  		if correct_opt == radio_ans
+  			score=score+1
+  			format.html
+  		else
+  			format.html
+  		end
+  		end
+  	end
 end
+  
+  
+
+
+
