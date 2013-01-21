@@ -15,10 +15,9 @@ group :development, :test do
 end
 
 gem 'devise'
+gem "cancan"
 
 gem 'json'
-
-gem 'libv8', '~> 3.11.8'
 
 gem 'rmagick'
 gem 'carrierwave'
@@ -33,12 +32,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-   
-  gem "therubyracer"
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"
-
-  
+  gem 'bootstrap-sass', '~> 2.2.2.0'   
 end
 
 gem 'jquery-rails'

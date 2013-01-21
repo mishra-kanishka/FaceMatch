@@ -38,6 +38,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
    version :thumb do
      process :resize_to_limit => [200, 200]
+     process :convert => :png
+   end
+
+   version :small do
+     process :resize_to_limit => [100, 100]
+     process :convert => :png
    end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -51,5 +57,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  def filename
+     @name ||= "#{secure_token}.#{file.extension}" if original_filename.present?
+   end
+
+  protected
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
+  end
 
 end
