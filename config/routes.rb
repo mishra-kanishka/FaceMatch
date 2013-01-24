@@ -1,16 +1,16 @@
 FaceMatch::Application.routes.draw do
+  devise_for :users
+
   get "quiz/home"
 
   get "quiz/index"
-
+  
   get "quiz/about"
 
   resources :profiles
 
-  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
-
   match 'calculate' => "quiz#calculate", :via => :post
-  
+ 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: facematch
+  api_key: '664164735292143'
+  api_secret: qV9a3LawtU99cHNCh5P1AEmnR2U
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: facematch
+  api_key: '664164735292143'
+  api_secret: qV9a3LawtU99cHNCh5P1AEmnR2U
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: facematch
+  api_key: '664164735292143'
+  api_secret: qV9a3LawtU99cHNCh5P1AEmnR2U
+  enhance_image_tag: true
+  static_image_support: false

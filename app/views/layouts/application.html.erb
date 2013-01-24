@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +53,7 @@
                <li><%= link_to "About us", "/quiz/about"  %></li>
               <li>
                 <% if user_signed_in? %>
-                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                <%= link_to "Sign out", destroy_user_session_path , :method => :delete %>
                 <% else %>
                 <%= link_to "sign in", new_user_session_path %>
                 <% end %>
@@ -78,8 +80,12 @@
                   <%= current_user.email%>
                   <%end%>
                 </li>
-                <li><%= link_to "Play", "/quiz/home"  %></li>
-                <li><%= link_to "Register..!!!", new_profile_path  %></li>
+                <li><%= link_to "Play", "/quiz/home"  %></li>                
+                <br/>                
+                <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_profile_path,
+            :class => 'btn btn-primary' %>
+
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -98,4 +104,5 @@
     <%= javascript_include_tag "application" %>
 
   </body>
+  
 </html>

@@ -36,4 +36,8 @@ FaceMatch::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+ 
+  config.gem "cancan"
+
+  # CLOUDINARY_URL=cloudinary://664164735292143:qV9a3LawtU99cHNCh5P1AEmnR2U@facematch
 end

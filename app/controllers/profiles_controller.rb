@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
-   before_filter :authenticate_user!#, :except => [:index, :show]
+   before_filter :authenticate_user!#, :except => [:index ]
    load_and_authorize_resource
   def index
     @profiles = Profile.all
@@ -15,6 +15,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+
     @profile = Profile.find(params[:id])
 
     respond_to do |format|
@@ -75,6 +76,7 @@ class ProfilesController < ApplicationController
   # DELETE /profiles/1
   # DELETE /profiles/1.json
   def destroy
+   
     @profile = Profile.find(params[:id])
     @profile.destroy
 
